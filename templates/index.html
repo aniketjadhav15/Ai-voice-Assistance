@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Voice Assistant</title>
+</head>
+<body>
+    <h1>Upload Your Audio File</h1>
+    <form id="upload-form" action="/process" method="POST" enctype="multipart/form-data">
+        <input type="file" name="audio_file" id="audio_file" accept=".wav">
+        <button type="submit">Upload and Process</button>
+    </form>
+    <div id="output">
+        <h2>Processed Output:</h2>
+        <p id="text-output"></p>
+        <audio id="audio-output" controls></audio>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
